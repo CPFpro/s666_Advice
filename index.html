@@ -314,14 +314,7 @@ function confirmRules() {
 
   msg.style.display = "block";
 
-  const email = "cpf_project@yahoo.com";  // ← Hier deine echte E-Mail-Adresse eintragen!
-  const subject = "REGEL-BESTÄTIGUNG – SKLAVIN666";
-  const body = "Hiermit bestätige ich, SKLAVIN666, dass ich alle Regeln und Anweisungen vollständig verstanden und akzeptiert habe.\n\nDatum: " + new Date().toLocaleString("de-DE");
 
-  const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-  // Einmaliger Versuch, Mail-Client zu öffnen
-  window.location.href = mailto;
 
   // Optional: kleine Verzögerung, falls Browser blockt
   setTimeout(() => {
