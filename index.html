@@ -7,8 +7,7 @@
   <style>
     body {
       font-family: system-ui, -apple-system, sans-serif;
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       min-height: 100vh;
       color: #e0e0e5;
       background: #000;
@@ -17,8 +16,7 @@
     }
     body::after {
       content: "";
-      position: fixed;
-      inset: 0;
+      position: fixed; inset: 0;
       background: linear-gradient(45deg, transparent 48%, rgba(255,240,220,0.18) 50%, transparent 52%);
       background-size: 300% 300%;
       animation: subtle-gloss 12s ease-in-out infinite;
@@ -33,7 +31,7 @@
       max-width: 640px;
       margin: 40px auto;
       padding: 32px 24px;
-      background: rgba(22, 22, 26, 0.92);
+      background: rgba(22,22,26,0.92);
       border-radius: 12px;
       border: 1px solid #2a2a35;
       box-shadow: 0 10px 40px rgba(0,0,0,0.85);
@@ -41,129 +39,25 @@
       position: relative;
       z-index: 1;
     }
-    h1 {
-      color: #FFD700;
-      text-align: center;
-      margin: 0 0 1.8em;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      font-weight: 900;
-      text-shadow: 0 0 12px rgba(255,215,0,0.5);
-    }
-    .disclaimer {
-      background: rgba(30,30,38,0.8);
-      padding: 40px 20px;
-      border-radius: 10px;
-      margin: 20px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 280px;
-    }
-    .title-lines {
-      color: c;
-      font-size: 1.75rem;
-      font-weight: 800;
-      line-height: 1.65;
-      letter-spacing: 1.2px;
-      text-align: center;
-      margin: 0 auto 2.5em;
-      width: 100%;
-      max-width: 420px;
-    }
-    .rules {
-      padding: 20px;
-      text-align: center;
-      font-size: 1.05rem;
-      line-height: 1.55;
-    }
-    .section-title {
-      font-size: 1.45rem;
-      font-weight: 800;
-      color: #ffffff;
-      margin: 2.8em 0 1.2em;
-      letter-spacing: 1px;
-    }
-    .note {
-      font-size: 1.0rem;
-      color: #ffd700;
-      font-weight: 600;
-      margin: 0.6em 0 1.8em;
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .important {
-      color: #b50000;
-      font-weight: 700;
-      font-size: 1.15rem;
-      margin: 2.5em 0 2em;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 1.2em auto;
-      max-width: 520px;
-      text-align: left;
-    }
-    ul li {
-      margin: 0.9em 0;
-      font-size: 1.05rem;
-    }
-    .position-desc {
-      font-family: monospace;
-      background: rgba(13,13,18,0.9);
-      padding: 14px 18px;
-      border-radius: 8px;
-      margin: 1.2em auto;
-      border: 1px dashed #444;
-      max-width: 460px;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      text-align: left;
-    }
-    .btn {
-      display: block;
-      background: #00cc66;
-      color: white;
-      border: none;
-      padding: 16px 48px;
-      font-size: 1.25rem;
-      font-weight: 700;
-      border-radius: 10px;
-      cursor: pointer;
-      margin: 2.5em auto 1em;
-      transition: all 0.25s ease;
-      letter-spacing: 1.5px;
-      box-shadow: 0 6px 16px rgba(0,204,102,0.4);
-    }
-    .btn:hover:not(:disabled) {
-      background: #00e673;
-      transform: translateY(-3px);
-      box-shadow: 0 14px 28px rgba(0,204,102,0.55);
-    }
-    .btn:disabled {
-      background: #555;
-      cursor: not-allowed;
-      opacity: 0.6;
-      box-shadow: none;
-      transform: none;
-    }
-    .confirmation {
-      color: #00ff88;
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-top: 1em;
-      display: none;
-    }
-    .small {
-      font-size: 0.88rem;
-      color: #888;
-      text-align: center;
-      margin-top: 70px;
-    }
+    h1 { color: #FFD700; text-align: center; margin: 0 0 1.8em; letter-spacing: 3px; text-transform: uppercase; font-weight: 900; text-shadow: 0 0 12px rgba(255,215,0,0.5); }
+    .disclaimer { background: rgba(30,30,38,0.8); padding: 40px 20px; border-radius: 10px; margin: 20px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 280px; }
+    .title-lines { color: #FFD700; font-size: 1.75rem; font-weight: 800; line-height: 1.65; letter-spacing: 1.2px; text-align: center; margin: 0 auto 2.5em; width: 100%; max-width: 420px; }
+    .rules { padding: 20px; text-align: center; font-size: 1.05rem; line-height: 1.55; }
+    .section-title { font-size: 1.45rem; font-weight: 800; color: #ffffff; margin: 2.8em 0 1.2em; letter-spacing: 1px; }
+    .note { font-size: 1.0rem; color: #ffd700; font-weight: 600; margin: 0.6em 0 1.8em; max-width: 520px; margin-left:auto; margin-right:auto; }
+    .important { color: #ff4444; font-weight: 700; font-size: 1.15rem; margin: 1.8em 0 1.2em; text-align:center; }
+    ul { list-style: none; padding: 0; margin: 1.2em auto; max-width: 520px; text-align: left; }
+    ul li { margin: 0.7em 0; font-size: 1.05rem; }
+    .extra-rule { color: #ffaa00; font-weight: bold; margin: 0.3em 0 1em 2em; font-size: 1.02rem; list-style: none; }
+    .position-desc { font-family: monospace; background: rgba(13,13,18,0.9); padding: 14px 18px; border-radius: 8px; margin: 1.2em auto; border: 1px dashed #444; max-width: 460px; font-size: 1.05rem; line-height: 1.7; text-align: left; }
+    .btn { display: block; background: #00cc66; color: white; border: none; padding: 16px 48px; font-size: 1.25rem; font-weight: 700; border-radius: 10px; cursor: pointer; margin: 2.5em auto 1em; transition: all 0.25s ease; letter-spacing: 1.5px; box-shadow: 0 6px 16px rgba(0,204,102,0.4); }
+    .btn:hover:not(:disabled) { background: #00e673; transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,204,102,0.55); }
+    .btn:disabled { background: #555; cursor: not-allowed; opacity: 0.6; box-shadow: none; transform: none; }
+    .confirmation { color: #00ff88; font-size: 1.1rem; font-weight: 600; margin-top: 1em; display: none; }
+    .small { font-size: 0.88rem; color: #888; text-align: center; margin-top: 70px; }
     .hidden { display: none; }
+    .checkbox-label { display: block; margin: 1.5em 0; font-size: 1.08rem; line-height: 1.45; cursor: pointer; user-select: none; text-align: left; padding-left: 2.4em; position: relative; }
+    .checkbox-label input { position: absolute; left: 0; top: 0.25em; width: 1.4em; height: 1.4em; accent-color: #00cc66; }
   </style>
 </head>
 <body>
@@ -172,15 +66,32 @@
   <h1>FOTOSHOOTING</h1>
   <div class="disclaimer">
     <div class="title-lines">
-      ANWEISUNGEN<br>
-      UND<br>
-      REGELN<br>
-      <br>
-      FÜR<br>
-      <br>
-      SKLAVIN666
+      ANWEISUNGEN<br>UND<br>REGELN<br><br>FÜR<br><br>SKLAVIN666
     </div>
     <button class="btn" onclick="acceptDisclaimer()">OPEN</button>
+  </div>
+</div>
+
+<div class="container hidden" id="questionsPage">
+  <div style="text-align: center; margin-bottom: 2.5em;">
+    <h1 style="color: #FFD700; font-size: 2.1rem; letter-spacing: 3px; margin: 0;">SELBSTEINSCHÄTZUNG</h1>
+    <p style="color: #ccc; margin: 1.2em 0 2.5em; font-size: 1.1rem;">
+      Welche der folgenden Aussagen treffen auf dich zu?<br>
+      <small>(Mehrfachauswahl möglich)</small>
+    </p>
+  </div>
+
+  <div class="rules" style="max-width: 540px; margin: 0 auto; text-align: left;">
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich bevorzuge auf dem Boden zu knieen anstelle auf einem bequemen Stuhl zu sitzen"> Ich bevorzuge auf dem Boden zu knieen anstelle auf einem bequemen Stuhl zu sitzen</label>
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich möchte eine harte aber gerechte Führung"> Ich möchte eine harte aber gerechte Führung</label>
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="Die Wünsche meines Herren stehen über meinen Wünschen"> Die Wünsche meines Herren stehen über meinen Wünschen</label>
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich bin nur zum Wohle des Herren da"> Ich bin nur zum Wohle des Herren da</label>
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich liebe es gefesselt zu sein"> Ich liebe es gefesselt zu sein</label>
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich möchte geknebelt sein"> Ich möchte geknebelt sein</label>
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich werde die Ladung des Herren stets mit vollstem Respekt achten und aufnehmen"> Ich werde die Ladung des Herren stets mit vollstem Respekt achten und aufnehmen</label>
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich stehe darauf von dem Herren vollgespritz zu werden"> Ich stehe darauf von dem Herren vollgespritz zu werden</label>
+
+    <button id="toRulesBtn" class="btn" onclick="goToRules()" style="margin-top: 3.8em;">WEITER</button>
   </div>
 </div>
 
@@ -189,6 +100,7 @@
     <h1 style="color: #FFD700; font-size: 2.3rem; letter-spacing: 4px; margin: 0;">VERBINDLICHE REGELN</h1>
   </div>
   <div class="rules">
+
     <div class="section-title">ANWEISUNG ZUM BETRETEN DES STUDIOS</div>
     <ul>
       <li>• KFZ AUF DER STRASSE PARKEN</li>
@@ -196,15 +108,16 @@
       <li>• 6 MAL AN DER STUDIOTÜR KLOPFEN</li>
       <li>• HÄNDE AUF DEN RÜCKEN</li>
       <li>• BLICK GESENKT HABEN</li>
-      <li>• BEGRÜSSUNG: "HERR, ICH,SKLAVIN 666, BIN BEREIT, HERR"</li>
+      <li>• BEGRÜSSUNG: "HERR, ICH, SKLAVIN 666, BIN BEREIT, HERR"</li>
       <li>• SICH AN VORGESEHENEN PLATZ BRINGEN LASSEN</li>
       <li>• NACH ANWEISUNG SICH VÖLLIG ENTKLEIDEN</li>
       <li>• ALLE HABSELIGKEITEN IN DIE KISTE VERSTAUEN</li>
       <li>• SICH NACKT IN DIE SKLAVINNEN-POSITION HINKNIEN</li>
       <li>• WARTEN AUF NEUE ANWEISUNG</li>
     </ul>
+
     <div class="section-title">ALLGEMEIN GÜLTIGE REGELN</div>
-    <ul>
+    <ul id="general-rules">
       <li>• PÜNKTLICH</li>
       <li>• BLASE ENTLEEREN</li>
       <li>• VOLLRASIERT Intimbereich vorne + hinten (glatt)</li>
@@ -213,12 +126,53 @@
       <li>• RUFNAME: "SKLAVIN" oder "666"</li>
       <li>• SIEZEN NACH MUSTER: „HERR, ……………, HERR“</li>
       <li>• REDEN NUR NACH ERLAUBNIS</li>
-      <li>• VERBOT VON MÖBELNUTZUNG</li>
-      <li>• KNIEN IN SKLAVIN-POSITION BEI NICHTNUTZUNG DER SKLAVIN</li>
-      <li>• PERMANENTE BEREITSCHAFT FÜR JEDE ART FESSELUNGEN</li>
-      <li>• PERMANENTE BEREITSCHAFT FÜR DEN KNEBEL</li>
+
+      <!-- Diese Punkte erscheinen nur bei Auswahl -->
+      <li id="moebel-block" style="display:none;">
+        <span id="moebel-li"></span>
+        <ul><li id="moebel-extra" class="extra-rule" style="display:none;"></li></ul>
+      </li>
+
+      <li id="fuehrung-block" style="display:none;">
+        <span id="fuehrung-li"></span>
+        <ul><li id="fuehrung-extra" class="extra-rule" style="display:none;"></li></ul>
+      </li>
+
+      <li id="wuensche-block" style="display:none;">
+        <span id="wuensche-li"></span>
+        <ul><li id="wuensche-extra" class="extra-rule" style="display:none;"></li></ul>
+      </li>
+
+      <li id="wohl-block" style="display:none;">
+        <span id="wohl-li"></span>
+        <ul><li id="wohl-extra" class="extra-rule" style="display:none;"></li></ul>
+      </li>
+
+      <li id="fesseln-block" style="display:none;">
+        <span id="fesseln-li"></span>
+        <ul><li id="fesseln-extra" class="extra-rule" style="display:none;"></li></ul>
+      </li>
+
+      <li id="knebel-block" style="display:none;">
+        <span id="knebel-li"></span>
+        <ul><li id="knebel-extra" class="extra-rule" style="display:none;"></li></ul>
+      </li>
+
+      <li id="ladung-block" style="display:none;">
+        <span id="ladung-respect-li"></span>
+        <ul><li id="ladung-respect-extra" class="extra-rule" style="display:none;"></li></ul>
+      </li>
+
+      <li id="vollgespritzt-block" style="display:none;">
+        <span id="vollgespritzt-li"></span>
+        <ul><li id="vollgespritzt-extra" class="extra-rule" style="display:none;"></li></ul>
+      </li>
+
       <li>• BESTRAFUNG BEI VERSTOSS</li>
     </ul>
+
+    <!-- Rest unverändert -->
+
     <div class="section-title">SKLAVIN-POSITION (STANDARD)</div>
     <div class="note">
       Sklavin-Position ist die Grundposition!<br>
@@ -231,6 +185,7 @@
       • RÜCKEN GERADE<br>
       • KOPF GESENKT (Blick zum Boden)
     </div>
+
     <div class="section-title">SKLAVIN-POSITION DEVOT (bei Anweisung)</div>
     <div class="position-desc">
       • WIE SKLAVIN-POSITION<br>
@@ -239,79 +194,151 @@
       • ZUNGE DEUTLICH RAUSGESTRECKT<br>
       • BLICK NACH OBEN (sofern nicht anders befohlen)
     </div>
+
     <p class="important">
       NICHTEINHALTUNG = VORSÄTZLICHE PROVOKATION
     </p>
+
     <p style="max-width: 520px; margin: 2.5em auto; font-size: 1.05rem;">
-      ALLE MASSNAMEN DIENEN REIN DER SICHERHEIT DER SKLAVIN666 UND DER SICHEREN, REIBUNGSLOSEN UND INTENSIVEN DURCHFÜHRUNG DIESES SHOOTINGS! OHNE BESTÄTIGUNG IST EIN ERFOLGREICHES SHOOTING NICHT GEWÄRLEISTET UND KANN NICHT STATTFINDEN!
+      ALLE MASSNAMEN DIENEN REIN DER SICHERHEIT DER SKLAVIN666 UND DER SICHEREN, REIBUNGSLOSEN UND INTENSIVEN DURCHFÜHRUNG DIESES SHOOTINGS!
     </p>
-    <div style="margin: 3.5em 0 1em; font-size: 1.35rem; font-weight: 800; color: #FFFFFF;">
-      SKLAVIN BESTÄTIGT ALLE REGELN UND ANWEISUNGEN STRICKT EINZUHALTEN.<br>
-      BEI MISACHTUNG WÜNSCHT DIE SKLAVIN STRENGE BESTRAFUNG!<br>  
-      <br>
+
+    <div style="margin: 3.5em 0 1em; font-size: 1.35rem; font-weight: 800; color: #FFFFFF; text-align:center;">
+      SKLAVIN BESTÄTIGT ALLE REGELN UND ANWEISUNGEN STRIKT EINZUHALTEN.<br>
+      BEI MISACHTUNG WÜNSCHT DIE SKLAVIN STRENGE BESTRAFUNG!<br><br>
       GEMÄSS WUNSCH DER SKLAVIN:<br>
       VERZICHT AUF SAFEWORD<br>
-      SKLAVIN TUT DEMÜTIG ALLES!<br>
+      SKLAVIN TUT DEMÜTIG ALLES!
     </div>
+
     <button id="confirmBtn" class="btn" onclick="confirmRules()">BESTÄTIGEN</button>
     <div id="confirmationMsg" class="confirmation">Bestätigung wurde einmalig versendet.</div>
   </div>
-  <div class="small">
-    SLAVE666ADVICE
-  </div>
+
+  <div class="small">SLAVE666ADVICE</div>
 </div>
 
 <script>
 let hasConfirmed = false;
+let selectedStatements = [];
 
-function acceptDisclaimer() {
-  document.getElementById("disclaimerPage").classList.add("hidden");
-  document.getElementById("rulesPage").classList.remove("hidden");
-  window.scrollTo(0,0);
+const STATEMENTS = {
+  KNIE: "Ich bevorzuge auf dem Boden zu knieen anstelle auf einem bequemen Stuhl zu sitzen",
+  HARTE: "Ich möchte eine harte aber gerechte Führung",
+  WUENSCHE: "Die Wünsche meines Herren stehen über meinen Wünschen",
+  WOHL: "Ich bin nur zum Wohle des Herren da",
+  FESSELN: "Ich liebe es gefesselt zu sein",
+  KNEBEL: "Ich möchte geknebelt sein",
+  LADUNG_RESPEKT: "Ich werde die Ladung des Herren stets mit vollstem Respekt achten und aufnehmen",
+  VOLLGESPRITZT: "Ich stehe darauf von dem Herren vollgespritz zu werden"
+};
 
-  // E-Mail-Benachrichtigung via Web3Forms bei OPEN
+function sendNotification(subject, baseMessage) {
+  let message = baseMessage + "\nZeit: " + new Date().toLocaleString("de-DE") + "\nURL: " + window.location.href;
+  if (selectedStatements.length > 0) {
+    message += "\n\nAusgewählte Aussagen:\n" + selectedStatements.map(s => "• " + s).join("\n");
+  }
   fetch("https://api.web3forms.com/submit", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json"
-    },
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
     body: JSON.stringify({
       access_key: "c4cae7a5-ae0f-4b4a-80ec-4f4c29f37185",
       from_name: "sklavin666 Seite",
-      subject: "OPEN geklickt",
-      message: "Jemand hat OPEN geklickt\nZeit: " + new Date().toLocaleString("de-DE") + "\nURL: " + window.location.href
+      subject: subject,
+      message: message
     })
-  }).catch(err => console.log("Web3Forms OPEN Fehler:", err));
+  }).catch(err => console.log("Web3Forms Fehler:", err));
+}
+
+function acceptDisclaimer() {
+  document.getElementById("disclaimerPage").classList.add("hidden");
+  document.getElementById("questionsPage").classList.remove("hidden");
+  window.scrollTo(0,0);
+  sendNotification("OPEN geklickt", "Jemand hat OPEN geklickt");
+}
+
+function goToRules() {
+  selectedStatements = [];
+  document.querySelectorAll('input[name="statement"]:checked')
+    .forEach(cb => selectedStatements.push(cb.value));
+
+  // Alle dynamischen Blöcke zunächst ausblenden
+  ['moebel', 'fuehrung', 'wuensche', 'wohl', 'fesseln', 'knebel', 'ladung', 'vollgespritzt'].forEach(id => {
+    document.getElementById(id + '-block').style.display = 'none';
+  });
+
+  // Nur ausgewählte Blöcke einblenden + Text setzen
+  if (selectedStatements.includes(STATEMENTS.KNIE)) {
+    document.getElementById("moebel-li").innerHTML = "• <strong>ABSOLUTES & STRENGES VERBOT JEDER MÖBELNUTZUNG</strong>";
+    document.getElementById("moebel-extra").innerHTML = "→ Du hast angegeben: **ausschließlich knien** – Stühle, Sessel, Sofas, Betten etc. tabu";
+    document.getElementById("moebel-extra").style.display = "list-item";
+    document.getElementById("moebel-block").style.display = "list-item";
+  }
+
+  if (selectedStatements.includes(STATEMENTS.HARTE)) {
+    document.getElementById("fuehrung-li").innerHTML = "• <strong>HARTE ABER GERECHTE FÜHRUNG – ausdrücklich gewünscht</strong>";
+    document.getElementById("fuehrung-extra").innerHTML = "→ Du möchtest **hart** geführt werden – dies wird konsequent umgesetzt";
+    document.getElementById("fuehrung-extra").style.display = "list-item";
+    document.getElementById("fuehrung-block").style.display = "list-item";
+  }
+
+  if (selectedStatements.includes(STATEMENTS.WUENSCHE)) {
+    document.getElementById("wuensche-li").innerHTML = "• <strong>WÜNSCHE DES HERRN GEHEN IMMER VOR</strong>";
+    document.getElementById("wuensche-extra").innerHTML = "→ Deine eigenen Wünsche treten hinter die des Herrn zurück – wie von dir bestätigt";
+    document.getElementById("wuensche-extra").style.display = "list-item";
+    document.getElementById("wuensche-block").style.display = "list-item";
+  }
+
+  if (selectedStatements.includes(STATEMENTS.WOHL)) {
+    document.getElementById("wohl-li").innerHTML = "• <strong>NUR ZUM WOHLE DES HERRN ANWESEND</strong>";
+    document.getElementById("wohl-extra").innerHTML = "→ Du existierst in diesem Shooting **ausschließlich** zu meinem Wohl und Vergnügen";
+    document.getElementById("wohl-extra").style.display = "list-item";
+    document.getElementById("wohl-block").style.display = "list-item";
+  }
+
+  if (selectedStatements.includes(STATEMENTS.FESSELN)) {
+    document.getElementById("fesseln-li").innerHTML = "• <strong>SEHR HOHE / LIEBEVOLLE BEREITSCHAFT FÜR FESSELUNG</strong>";
+    document.getElementById("fesseln-extra").innerHTML = "→ Du **liebst** es gefesselt zu sein – dies wird intensiv und häufig berücksichtigt";
+    document.getElementById("fesseln-extra").style.display = "list-item";
+    document.getElementById("fesseln-block").style.display = "list-item";
+  }
+
+  if (selectedStatements.includes(STATEMENTS.KNEBEL)) {
+    document.getElementById("knebel-li").innerHTML = "• <strong>EXPLIZITER WUNSCH NACH KNEBELUNG</strong>";
+    document.getElementById("knebel-extra").innerHTML = "→ Du **möchtest** geknebelt sein – dies wird regelmäßig und konsequent angewendet";
+    document.getElementById("knebel-extra").style.display = "list-item";
+    document.getElementById("knebel-block").style.display = "list-item";
+  }
+
+  if (selectedStatements.includes(STATEMENTS.LADUNG_RESPEKT)) {
+    document.getElementById("ladung-respect-li").innerHTML = "• <strong>RESPEKTVOLLER UND DEMÜTIGER UMGANG MIT DER LADUNG DES HERRN</strong>";
+    document.getElementById("ladung-respect-extra").innerHTML = "→ Du wirst jede Ladung **mit vollstem Respekt achten und aufnehmen** – wie von dir ausdrücklich bestätigt";
+    document.getElementById("ladung-respect-extra").style.display = "list-item";
+    document.getElementById("ladung-block").style.display = "list-item";
+  }
+
+  if (selectedStatements.includes(STATEMENTS.VOLLGESPRITZT)) {
+    document.getElementById("vollgespritzt-li").innerHTML = "• <strong>VORLIEBE / WUNSCH NACH VOLLSPRITZEN DURCH DEN HERRN</strong>";
+    document.getElementById("vollgespritzt-extra").innerHTML = "→ Du **stehst darauf**, vom Herrn vollgespritzt zu werden – dies wird entsprechend häufig und intensiv umgesetzt";
+    document.getElementById("vollgespritzt-extra").style.display = "list-item";
+    document.getElementById("vollgespritzt-block").style.display = "list-item";
+  }
+
+  document.getElementById("questionsPage").classList.add("hidden");
+  document.getElementById("rulesPage").classList.remove("hidden");
+  window.scrollTo(0,0);
+
+  sendNotification("Selbsteinschätzung → Regeln", "Selbsteinschätzung ausgefüllt");
 }
 
 function confirmRules() {
   if (hasConfirmed) return;
   hasConfirmed = true;
-
-  const btn = document.getElementById("confirmBtn");
-  const msg = document.getElementById("confirmationMsg");
-
-  btn.disabled = true;
-  btn.textContent = "BESTÄTIGT";
-  msg.style.display = "block";
-
-  // E-Mail-Benachrichtigung via Web3Forms bei BESTÄTIGEN
-  fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json"
-    },
-    body: JSON.stringify({
-      access_key: "c4cae7a5-ae0f-4b4a-80ec-4f4c29f37185",
-      from_name: "sklavin666 Seite",
-      subject: "Bestätigen geklickt",
-      message: "Jemand hat BESTÄTIGEN geklickt\nZeit: " + new Date().toLocaleString("de-DE") + "\nURL: " + window.location.href
-    })
-  }).catch(err => console.log("Web3Forms Bestätigen Fehler:", err));
+  document.getElementById("confirmBtn").disabled = true;
+  document.getElementById("confirmBtn").textContent = "BESTÄTIGT";
+  document.getElementById("confirmationMsg").style.display = "block";
+  sendNotification("Regeln bestätigt", "Regeln + Selbsteinschätzung bestätigt");
 }
 </script>
-
 </body>
 </html>
