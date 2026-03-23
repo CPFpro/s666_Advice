@@ -82,13 +82,13 @@
   </div>
 
   <div class="rules" style="max-width: 540px; margin: 0 auto; text-align: left;">
-    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich bevorzuge auf dem Boden zu knieen anstelle auf einem bequemen Stuhl zu sitzen"> Ich bevorzuge auf dem Boden zu knieen anstelle auf einem bequemen Stuhl zu sitzen</label>
-    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich möchte eine harte aber gerechte Führung"> Ich möchte eine harte aber gerechte Führung</label>
-    <label class="checkbox-label"><input type="checkbox" name="statement" value="Die Wünsche meines Herren stehen über meinen Wünschen"> Die Wünsche meines Herren stehen über meinen Wünschen</label>
-    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich bin nur zum Wohle des Herren da"> Ich bin nur zum Wohle des Herren da</label>
-    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich liebe es gefesselt zu sein"> Ich liebe es gefesselt zu sein</label>
-    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich möchte geknebelt sein"> Ich möchte geknebelt sein</label>
-    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich werde die Ladung des Herren stets mit vollstem Respekt achten und aufnehmen"> Ich werde die Ladung des Herren stets mit vollstem Respekt achten und aufnehmen</label>
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich bevorzuge es auf dem Boden zu knieen anstelle auf einem bequemen Stuhl zu sitzen"> Ich bevorzuge auf dem Boden zu knieen anstelle auf einem bequemen Stuhl zu sitzen</label>
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich möchte eine nachsichtige aber harte Führung"> Ich möchte eine harte aber gerechte Führung</label>
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="Die Wünsche meines Herren stehen stets über meinen Wünschen"> Die Wünsche meines Herren stehen über meinen Wünschen</label>
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich bin nur zum Vergnügen des Herren da"> Ich bin nur zum Wohle des Herren da</label>
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich stehe darauf, gefesselt zu sein"> Ich liebe es gefesselt zu sein</label>
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich möchte gerne geknebelt sein"> Ich möchte geknebelt sein</label>
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich werde die Ladung des Herren stets mit vollstem Respekt achten"> Ich werde die Ladung des Herren stets mit vollstem Respekt achten und aufnehmen</label>
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich stehe darauf von dem Herren vollgespritz zu werden"> Ich stehe darauf von dem Herren vollgespritz zu werden</label>
 
     <button id="toRulesBtn" class="btn" onclick="goToRules()" style="margin-top: 3.8em;">WEITER</button>
@@ -208,7 +208,7 @@
       BEI MISACHTUNG WÜNSCHT DIE SKLAVIN STRENGE BESTRAFUNG!<br><br>
       GEMÄSS WUNSCH DER SKLAVIN:<br>
       VERZICHT AUF SAFEWORD<br>
-      SKLAVIN TUT DEMÜTIG ALLES!
+      
     </div>
 
     <button id="confirmBtn" class="btn" onclick="confirmRules()">BESTÄTIGEN</button>
@@ -270,7 +270,7 @@ function goToRules() {
   // Nur ausgewählte Blöcke einblenden + Text setzen
   if (selectedStatements.includes(STATEMENTS.KNIE)) {
     document.getElementById("moebel-li").innerHTML = "• <strong>ABSOLUTES & STRENGES VERBOT JEDER MÖBELNUTZUNG</strong>";
-    document.getElementById("moebel-extra").innerHTML = "→ Du hast angegeben: **ausschließlich knien** – Stühle, Sessel, Sofas, Betten etc. tabu";
+    document.getElementById("moebel-extra").innerHTML = "→Eigene Angabe";
     document.getElementById("moebel-extra").style.display = "list-item";
     document.getElementById("moebel-block").style.display = "list-item";
   }
