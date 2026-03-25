@@ -209,6 +209,10 @@
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Nur der Herr weiß, welches Outfit mir am besten steht."> Nur der Herr weiß, welches Outfit mir am besten steht.</label>
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Dieses hier versetzt mich in erregten Gemütszustand"> Dieses hier versetzt mich in erregten Gemütszustand</label>
     <label class="checkbox-label"><input type="checkbox" name="statement" value="In dem Gestell mit Ketten und Stahl restriktiv fixiert, fest geknebelt, ersehne ich den Moment der Öffnung der Reißverschlüße"> In dem Gestell mit Ketten und Stahl restriktiv fixiert, fest geknebelt, ersehne ich den Moment der Öffnung der Reißverschlüße</label>
+    
+    <!-- Neue Aussage -->
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich freue mich wenn ich mit der Gerte motiviert werde"> Ich freue mich wenn ich mit der Gerte motiviert werde</label>
+    
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Mit Hingabe und größtem Vertrauen verzichte ich auf das SAFEWORD"> Mit Hingabe und größtem Vertrauen verzichte ich auf das SAFEWORD</label>
 
     <button id="toRulesBtn" class="btn" onclick="goToRules()" style="margin-top: 3.8em;">WEITER</button>
@@ -265,6 +269,7 @@
       <li id="outfit-li" style="display:none;">• KEINE FREIE OUTFITWAHL DER SKLAVIN</li>
       <li id="safeword-li" style="display:none;">• KEIN SAFEWORD</li>
       <li id="feucht-li" style="display:none;">• PERMANENTER ZUGANG ZU FEUCHTGEBIETEN</li>
+      <li id="gerte-li" style="display:none;">• GERTE ZUR MOTIVATION</li>
 
       <li>• BESTRAFUNG BEI VERSTOSS</li>
     </ul>
@@ -357,7 +362,8 @@ const STATEMENTS = {
   OUTFIT:   "Nur der Herr weiß, welches Outfit mir am besten steht.",
   SAFEWORD: "Mit Hingabe und größtem Vertrauen verzichte ich auf das SAFEWORD",
   ERREGUNG: "Dieses hier versetzt mich in erregten Gemütszustand",
-  GESTELL:  "In dem Gestell mit Ketten und Stahl restriktiv fixiert, fest geknebelt, ersehne ich den Moment der Öffnung der Reißverschlüße"
+  GESTELL:  "In dem Gestell mit Ketten und Stahl restriktiv fixiert, fest geknebelt, ersehne ich den Moment der Öffnung der Reißverschlüße",
+  GERTE:    "Ich freue mich wenn ich mit der Gerte motiviert werde"   // ← neu
 };
 
 function sendNotification(subject, baseMessage) {
@@ -397,7 +403,7 @@ function goToRules() {
   selectedStatements = Array.from(document.querySelectorAll('input[name="statement"]:checked'))
                            .map(cb => cb.value);
 
-  const ids = ['moebel-li','fuehrung-li','wuensche-li','wohl-li','fesseln-li','knebel-li','ladung-li','vollgespritzt-li','brust-li','plug-li','heels-li','outfit-li','safeword-li','feucht-li'];
+  const ids = ['moebel-li','fuehrung-li','wuensche-li','wohl-li','fesseln-li','knebel-li','ladung-li','vollgespritzt-li','brust-li','plug-li','heels-li','outfit-li','safeword-li','feucht-li','gerte-li'];
   ids.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.style.display = 'none';
@@ -421,6 +427,9 @@ function goToRules() {
   }
   if (selectedStatements.includes(STATEMENTS.GESTELL)) {
     document.getElementById("feucht-li").style.display = "list-item";
+  }
+  if (selectedStatements.includes(STATEMENTS.GERTE)) {
+    document.getElementById("gerte-li").style.display = "list-item";
   }
 
   document.getElementById("questionsPage").classList.add("hidden");
@@ -451,7 +460,6 @@ function confirmWithName() {
   document.getElementById("confirmBtn").textContent = "UNWIDERRUFLICH BESTÄTIGT";
   document.getElementById("confirmationMsg").style.display = "block";
 
-  // ← WICHTIG: Hier wird die E-Mail mit dem Namen gesendet
   sendNotification("Regeln + Name unwiderruflich bestätigt", 
     `Alle Regeln und Selbsteinschätzung wurden von ${name} unwiderruflich bestätigt`);
 }
