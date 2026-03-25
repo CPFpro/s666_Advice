@@ -69,7 +69,7 @@
     }
     .position-image {
       display: block;
-      max-width: 88%;
+      max-width: 92%;
       margin: 1.8em auto;
       border-radius: 10px;
       border: 2px solid #444;
@@ -123,6 +123,48 @@
       text-shadow: 0 0 8px rgba(255,68,68,0.6);
       display: none;
     }
+
+    #nameModal {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.95);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+    .modal-content {
+      background: #1a1a22;
+      padding: 40px 30px;
+      border-radius: 12px;
+      border: 2px solid #ff4444;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(255,68,68,0.6);
+    }
+    .modal-content h2 { color: #ff4444; margin: 0 0 20px; }
+    #nameInput {
+      width: 100%;
+      padding: 14px;
+      font-size: 1.2rem;
+      background: #111;
+      border: 1px solid #555;
+      color: white;
+      border-radius: 8px;
+      margin: 15px 0;
+      text-align: center;
+    }
+    #confirmNameBtn {
+      background: #ff4444;
+      color: white;
+      border: none;
+      padding: 14px 40px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -165,10 +207,8 @@
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich bin in einen hogtie gefesselt, geknebelt mit Ballgag, meine Brüste sind abgebunden und haben Nippelklammern. Vorne ist ein Plug.... der vibriert und ich genieße es!!!!"> Ich bin in einen hogtie gefesselt, geknebelt mit Ballgag, meine Brüste sind abgebunden und haben Nippelklammern. Vorne ist ein Plug.... der vibriert und ich genieße es!!!!</label>
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Der Herr schiebt im richtigen Moment den Analplug rein..."> Der Herr schiebt im richtigen Moment den Analplug rein...</label>
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Nur der Herr weiß, welches Outfit mir am besten steht."> Nur der Herr weiß, welches Outfit mir am besten steht.</label>
-    
-    <!-- Neue Aussage -->
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Dieses hier versetzt mich in erregten Gemütszustand"> Dieses hier versetzt mich in erregten Gemütszustand</label>
-    
+    <label class="checkbox-label"><input type="checkbox" name="statement" value="In dem Gestell mit Ketten und Stahl restriktiv fixiert, fest geknebelt, ersehne ich den Moment der Öffnung der Reißverschlüße"> In dem Gestell mit Ketten und Stahl restriktiv fixiert, fest geknebelt, ersehne ich den Moment der Öffnung der Reißverschlüße</label>
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Mit Hingabe und größtem Vertrauen verzichte ich auf das SAFEWORD"> Mit Hingabe und größtem Vertrauen verzichte ich auf das SAFEWORD</label>
 
     <button id="toRulesBtn" class="btn" onclick="goToRules()" style="margin-top: 3.8em;">WEITER</button>
@@ -224,6 +264,7 @@
       <li id="heels-li" style="display:none;">• STRIKTE HIGHHEEL / BALLETHEEL- PFLICHT / + 14cm</li>
       <li id="outfit-li" style="display:none;">• KEINE FREIE OUTFITWAHL DER SKLAVIN</li>
       <li id="safeword-li" style="display:none;">• KEIN SAFEWORD</li>
+      <li id="feucht-li" style="display:none;">• PERMANENTER ZUGANG ZU FEUCHTGEBIETEN</li>
 
       <li>• BESTRAFUNG BEI VERSTOSS</li>
     </ul>
@@ -240,7 +281,7 @@
       • RÜCKEN GERADE<br>
       • KOPF GESENKT (Blick zum Boden)
     </div>
-    <img src="https://imgur.com/ee1buUA" alt="Standard Sklavin-Position" class="position-image">
+    <img src="https://i.imgur.com/ee1buUA.jpg" alt="Standard Sklavin-Position" class="position-image">
 
     <div class="section-title">SKLAVIN-POSITION DEVOT (bei Anweisung)</div>
     <div class="position-desc">
@@ -250,13 +291,13 @@
       • ZUNGE DEUTLICH RAUSGESTRECKT<br>
       • BLICK NACH OBEN (sofern nicht anders befohlen)
     </div>
-    <img src="https://imgur.com/E4YIr2w" alt="Devote Sklavin-Position" class="position-image">
+    <img src="https://i.imgur.com/E4YIr2w.jpg" alt="Devote Sklavin-Position" class="position-image">
 
     <div class="section-title">ALTERNATIVE POSITION AUF ANWEISUNG</div>
     <div class="position-desc">
       Diese Position wird nur auf ausdrückliche Anweisung des Herrn eingenommen.
     </div>
-    <img src="https://imgur.com/oQE3FRh" alt="Alternative Position auf Anweisung" class="position-image">
+    <img src="https://i.imgur.com/oQE3FRh.jpg" alt="Alternative Position auf Anweisung" class="position-image">
 
     <p class="important">
       NICHTEINHALTUNG = VORSÄTZLICHE PROVOKATION
@@ -275,16 +316,30 @@
       ACHTUNG! KEIN SAFEWORD!
     </div>
 
-    <button id="confirmBtn" class="btn" onclick="confirmRules()">BESTÄTIGEN</button>
+    <button id="confirmBtn" class="btn" onclick="showNameModal()">BESTÄTIGEN</button>
     <div id="confirmationMsg" class="confirmation">Bestätigung wurde einmalig versendet.</div>
   </div>
 
   <div class="small">SLAVE666ADVICE</div>
 </div>
 
+<!-- Namens-Modal -->
+<div id="nameModal">
+  <div class="modal-content">
+    <h2>UNWIDERRUFLICHE BESTÄTIGUNG</h2>
+    <p style="color:#ccc; margin: 15px 0 20px;">
+      Bitte gib deinen Namen ein,<br>
+      um alle Regeln und deine Aussagen endgültig zu bestätigen.
+    </p>
+    <input type="text" id="nameInput" placeholder="Name" autocomplete="off">
+    <button id="confirmNameBtn" onclick="confirmWithName()">JETZT UNWIDERRUFLICH BESTÄTIGEN</button>
+  </div>
+</div>
+
 <script>
 let hasConfirmed = false;
 let selectedStatements = [];
+let confirmedName = "";
 
 const STATEMENTS = {
   KNIE:     "Ich bevorzuge auf dem Boden zu knieen anstelle auf einem bequemen Stuhl zu sitzen",
@@ -301,7 +356,8 @@ const STATEMENTS = {
   HEELS:    "Ich trage lieber die HighHeels oder Balletheels als gequeme Sneakers",
   OUTFIT:   "Nur der Herr weiß, welches Outfit mir am besten steht.",
   SAFEWORD: "Mit Hingabe und größtem Vertrauen verzichte ich auf das SAFEWORD",
-  ERREGUNG: "Dieses hier versetzt mich in erregten Gemütszustand"   // ← neu
+  ERREGUNG: "Dieses hier versetzt mich in erregten Gemütszustand",
+  GESTELL:  "In dem Gestell mit Ketten und Stahl restriktiv fixiert, fest geknebelt, ersehne ich den Moment der Öffnung der Reißverschlüße"
 };
 
 function sendNotification(subject, baseMessage) {
@@ -310,6 +366,9 @@ function sendNotification(subject, baseMessage) {
     extra = "\n\n=== AUSGEWÄHLTE PUNKTE ===\n" + 
             selectedStatements.map((s, i) => `${i+1}. ${s}`).join("\n") +
             "\n=========================";
+  }
+  if (confirmedName) {
+    extra += `\n\nUNWIDERRUFLICH BESTÄTIGT DURCH: ${confirmedName}`;
   }
 
   const message = baseMessage + "\nZeit: " + new Date().toLocaleString("de-DE") + 
@@ -338,39 +397,30 @@ function goToRules() {
   selectedStatements = Array.from(document.querySelectorAll('input[name="statement"]:checked'))
                            .map(cb => cb.value);
 
-  const ids = ['moebel-li','fuehrung-li','wuensche-li','wohl-li','fesseln-li','knebel-li','ladung-li','vollgespritzt-li','brust-li','plug-li','heels-li','outfit-li','safeword-li'];
+  const ids = ['moebel-li','fuehrung-li','wuensche-li','wohl-li','fesseln-li','knebel-li','ladung-li','vollgespritzt-li','brust-li','plug-li','heels-li','outfit-li','safeword-li','feucht-li'];
   ids.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.style.display = 'none';
   });
 
-  if (selectedStatements.includes(STATEMENTS.KNIE))    document.getElementById("moebel-li").style.display = "list-item";
-  if (selectedStatements.includes(STATEMENTS.HARTE))   document.getElementById("fuehrung-li").style.display = "list-item";
+  if (selectedStatements.includes(STATEMENTS.KNIE)) document.getElementById("moebel-li").style.display = "list-item";
+  if (selectedStatements.includes(STATEMENTS.HARTE)) document.getElementById("fuehrung-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.WUENSCHE)) document.getElementById("wuensche-li").style.display = "list-item";
-  if (selectedStatements.includes(STATEMENTS.WOHL))    document.getElementById("wohl-li").style.display = "list-item";
+  if (selectedStatements.includes(STATEMENTS.WOHL)) document.getElementById("wohl-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.FESSELN)) document.getElementById("fesseln-li").style.display = "list-item";
-  if (selectedStatements.includes(STATEMENTS.KNEBEL))  document.getElementById("knebel-li").style.display = "list-item";
-  if (selectedStatements.includes(STATEMENTS.RINGGAG) || selectedStatements.includes(STATEMENTS.GESICHT)) {
-    document.getElementById("ladung-li").style.display = "list-item";
-  }
-  if (selectedStatements.includes(STATEMENTS.VOLLGESPRITZT)) {
-    document.getElementById("vollgespritzt-li").style.display = "list-item";
-  }
-  if (selectedStatements.includes(STATEMENTS.HOGTIE)) {
-    document.getElementById("brust-li").style.display = "list-item";
-  }
-  if (selectedStatements.includes(STATEMENTS.PLUG)) {
-    document.getElementById("plug-li").style.display = "list-item";
-  }
-  if (selectedStatements.includes(STATEMENTS.HEELS)) {
-    document.getElementById("heels-li").style.display = "list-item";
-  }
-  if (selectedStatements.includes(STATEMENTS.OUTFIT)) {
-    document.getElementById("outfit-li").style.display = "list-item";
-  }
+  if (selectedStatements.includes(STATEMENTS.KNEBEL)) document.getElementById("knebel-li").style.display = "list-item";
+  if (selectedStatements.includes(STATEMENTS.RINGGAG) || selectedStatements.includes(STATEMENTS.GESICHT)) document.getElementById("ladung-li").style.display = "list-item";
+  if (selectedStatements.includes(STATEMENTS.VOLLGESPRITZT)) document.getElementById("vollgespritzt-li").style.display = "list-item";
+  if (selectedStatements.includes(STATEMENTS.HOGTIE)) document.getElementById("brust-li").style.display = "list-item";
+  if (selectedStatements.includes(STATEMENTS.PLUG)) document.getElementById("plug-li").style.display = "list-item";
+  if (selectedStatements.includes(STATEMENTS.HEELS)) document.getElementById("heels-li").style.display = "list-item";
+  if (selectedStatements.includes(STATEMENTS.OUTFIT)) document.getElementById("outfit-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.SAFEWORD)) {
     document.getElementById("safeword-li").style.display = "list-item";
     document.getElementById("noSafewordWarning").style.display = "block";
+  }
+  if (selectedStatements.includes(STATEMENTS.GESTELL)) {
+    document.getElementById("feucht-li").style.display = "list-item";
   }
 
   document.getElementById("questionsPage").classList.add("hidden");
@@ -380,13 +430,30 @@ function goToRules() {
   sendNotification("Selbsteinschätzung → Regeln", "Selbsteinschätzung wurde ausgefüllt");
 }
 
-function confirmRules() {
+function showNameModal() {
   if (hasConfirmed) return;
+  document.getElementById("nameModal").style.display = "flex";
+  document.getElementById("nameInput").focus();
+}
+
+function confirmWithName() {
+  const name = document.getElementById("nameInput").value.trim();
+  if (!name) {
+    alert("Bitte gib deinen Namen ein, um zu bestätigen.");
+    return;
+  }
+
+  confirmedName = name;
   hasConfirmed = true;
+
+  document.getElementById("nameModal").style.display = "none";
   document.getElementById("confirmBtn").disabled = true;
-  document.getElementById("confirmBtn").textContent = "BESTÄTIGT";
+  document.getElementById("confirmBtn").textContent = "UNWIDERRUFLICH BESTÄTIGT";
   document.getElementById("confirmationMsg").style.display = "block";
-  sendNotification("Regeln bestätigt", "Alle Regeln + Selbsteinschätzung wurden bestätigt");
+
+  // ← WICHTIG: Hier wird die E-Mail mit dem Namen gesendet
+  sendNotification("Regeln + Name unwiderruflich bestätigt", 
+    `Alle Regeln und Selbsteinschätzung wurden von ${name} unwiderruflich bestätigt`);
 }
 </script>
 </body>
