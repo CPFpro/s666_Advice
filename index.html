@@ -196,17 +196,12 @@
 
   <div class="rules" style="max-width: 540px; margin: 0 auto; text-align: left;">
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich trage lieber die HighHeels oder Balletheels als gequeme Sneakers"> Ich trage lieber die HighHeels oder Balletheels als gequeme Sneakers</label>
-    
-    <!-- 2. Punkt (bereits vorhanden) -->
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Einfühlsam und warmherzig geführt werde ich alle Wünsche erfüllen."> Einfühlsam und warmherzig geführt werde ich alle Wünsche erfüllen.</label>
-
-    <!-- Neue Punkte ab 3. Stelle -->
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich genieße es, wenn das Seil tief in mein Schritt gräbt"> Ich genieße es, wenn das Seil tief in mein Schritt gräbt</label>
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich genieße es, wenn der Knebel meinen Mund unbarmherzig zum Schweigen bringt"> Ich genieße es, wenn der Knebel meinen Mund unbarmherzig zum Schweigen bringt</label>
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich genieße es, wenn die Ketten und Handschellen mich fest in Position halten"> Ich genieße es, wenn die Ketten und Handschellen mich fest in Position halten</label>
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich genieße es, wenn meine Brüste gefesselt werden"> Ich genieße es, wenn meine Brüste gefesselt werden</label>
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich genieße den Moment der kompletten Kontrolllosigkeit"> Ich genieße den Moment der kompletten Kontrolllosigkeit</label>
-
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich möchte eine nachsichtige harte Führung des Herren"> Ich möchte eine nachsichtige harte Führung des Herren</label>
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Die Wünsche meines Herren stehen über meinen Wünschen"> Die Wünsche meines Herren stehen über meinen Wünschen</label>
     <label class="checkbox-label"><input type="checkbox" name="statement" value="Ich bin nur zum Wohle des Herren da"> Ich bin nur zum Wohle des Herren da</label>
@@ -359,11 +354,39 @@ let hasConfirmed = false;
 let selectedStatements = [];
 let confirmedName = "";
 
+// Alle verfügbaren Aussagen (für die "Nicht ausgewählt"-Liste)
+const ALL_STATEMENTS = [
+  "Ich trage lieber die HighHeels oder Balletheels als gequeme Sneakers",
+  "Einfühlsam und warmherzig geführt werde ich alle Wünsche erfüllen.",
+  "Ich genieße es, wenn das Seil tief in mein Schritt gräbt",
+  "Ich genieße es, wenn der Knebel meinen Mund unbarmherzig zum Schweigen bringt",
+  "Ich genieße es, wenn die Ketten und Handschellen mich fest in Position halten",
+  "Ich genieße es, wenn meine Brüste gefesselt werden",
+  "Ich genieße den Moment der kompletten Kontrolllosigkeit",
+  "Ich möchte eine nachsichtige harte Führung des Herren",
+  "Die Wünsche meines Herren stehen über meinen Wünschen",
+  "Ich bin nur zum Wohle des Herren da",
+  "Ich stehe darauf von dem Herren gefesselt zu werden",
+  "Ich möchte geknebelt sein",
+  "Ich trage gerne den Ringgag, damit der Herr die Ladung besser bei mir platzieren kann",
+  "Mein geknebeltes Gesicht ist immer bereit",
+  "Ich bin fixiert und der Herr kann mit RAPEPLAY alles mit mir machen",
+  "Ich bin in einen hogtie gefesselt, geknebelt mit Ballgag, meine Brüste sind abgebunden und haben Nippelklammern. Vorne ist ein Plug.... der vibriert und ich genieße es!!!!",
+  "Der Herr schiebt im richtigen Moment den Analplug rein...",
+  "Nur der Herr weiß, welches Outfit mir am besten steht.",
+  "Dieses hier versetzt mich in erregten Gemütszustand",
+  "In dem Gestell mit Ketten und Stahl restriktiv fixiert, fest geknebelt, ersehne ich den Moment der Öffnung der Reißverschlüße",
+  "Ich freue mich wenn ich mit der Gerte motiviert werde",
+  "Der Zwiespalt zwischen dieser warmherzigen Führung und harten Dominanz versetzt mich in erregten Gemütszustand",
+  "Ich weiß nicht was ich will",
+  "Mit Hingabe und größtem Vertrauen verzichte ich auf das SAFEWORD"
+];
+
 const STATEMENTS = {
   KNIE:     "Ich trage lieber die HighHeels oder Balletheels als gequeme Sneakers",
   WARM:     "Einfühlsam und warmherzig geführt werde ich alle Wünsche erfüllen.",
   SEIL:     "Ich genieße es, wenn das Seil tief in mein Schritt gräbt",
-  KNEBEL:   "Ich genieße es, wenn der Knebel meinen Mund unbarmherzig zum Schweigen bringt",
+  KNEBEL2:  "Ich genieße es, wenn der Knebel meinen Mund unbarmherzig zum Schweigen bringt",
   KETTEN:   "Ich genieße es, wenn die Ketten und Handschellen mich fest in Position halten",
   BRUESTE:  "Ich genieße es, wenn meine Brüste gefesselt werden",
   KONTROLLE:"Ich genieße den Moment der kompletten Kontrolllosigkeit",
@@ -371,6 +394,7 @@ const STATEMENTS = {
   WUENSCHE: "Die Wünsche meines Herren stehen über meinen Wünschen",
   WOHL:     "Ich bin nur zum Wohle des Herren da",
   FESSELN:  "Ich stehe darauf von dem Herren gefesselt zu werden",
+  KNEBEL:   "Ich möchte geknebelt sein",
   RINGGAG:  "Ich trage gerne den Ringgag, damit der Herr die Ladung besser bei mir platzieren kann",
   GESICHT:  "Mein geknebeltes Gesicht ist immer bereit",
   RAPEPLAY: "Ich bin fixiert und der Herr kann mit RAPEPLAY alles mit mir machen",
@@ -387,24 +411,35 @@ const STATEMENTS = {
 };
 
 function sendNotification(subject, baseMessage) {
-  let extra = "";
+  let selectedText = "";
+  let notSelectedText = "";
+
   if (selectedStatements.length > 0) {
-    extra = "\n\n=== AUSGEWÄHLTE PUNKTE ===\n" + 
-            selectedStatements.map((s, i) => `${i+1}. ${s}`).join("\n") +
-            "\n=========================";
+    selectedText = "\n\n=== AUSGEWÄHLTE AUSSAGEN ===\n" + 
+                   selectedStatements.map((s, i) => `${i+1}. ${s}`).join("\n") +
+                   "\n=========================";
   }
-  if (confirmedName) {
-    extra += `\n\nUNWIDERRUFLICH BESTÄTIGT DURCH: ${confirmedName}`;
+
+  // Nicht ausgewählte Punkte berechnen
+  const notSelected = ALL_STATEMENTS.filter(item => !selectedStatements.includes(item));
+  if (notSelected.length > 0) {
+    notSelectedText = "\n\n=== NICHT AUSGEWÄHLTE AUSSAGEN ===\n" + 
+                      notSelected.map((s, i) => `${i+1}. ${s}`).join("\n") +
+                      "\n==================================";
   }
 
   const message = baseMessage + "\nZeit: " + new Date().toLocaleString("de-DE") + 
-                  "\nURL: " + window.location.href + extra;
+                  "\nURL: " + window.location.href + selectedText + notSelectedText;
+
+  if (confirmedName) {
+    message += `\n\nUNWIDERRUFLICH BESTÄTIGT DURCH: ${confirmedName}`;
+  }
 
   fetch("https://api.web3forms.com/submit", {
     method: "POST",
     headers: { "Content-Type": "application/json", "Accept": "application/json" },
     body: JSON.stringify({
-      access_key: "c4cae7a5-ae0f-4b4a-80ec-4f4c29f37185",
+      access_key: "a299efc0-ebd5-46f2-a7be-2b1362111558",
       from_name: "sklavin666 Seite",
       subject: subject,
       message: message
@@ -423,7 +458,6 @@ function goToRules() {
   selectedStatements = Array.from(document.querySelectorAll('input[name="statement"]:checked'))
                            .map(cb => cb.value);
 
-  // Nur die Punkte mit dynamischem Text werden hier behandelt
   const dynamicIds = ['moebel-li','fuehrung-li','wuensche-li','wohl-li','fesseln-li','knebel-li','ladung-li','vollgespritzt-li','brust-li','plug-li','heels-li','outfit-li','safeword-li','feucht-li','gerte-li','warm-li','zwiespalt-li','unschluessig-li'];
   dynamicIds.forEach(id => {
     const el = document.getElementById(id);
