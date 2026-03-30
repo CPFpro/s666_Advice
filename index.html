@@ -354,7 +354,7 @@ let hasConfirmed = false;
 let selectedStatements = [];
 let confirmedName = "";
 
-// Alle Aussagen für die "Nicht ausgewählt"-Liste
+// Alle Aussagen (für "Nicht ausgewählt" in der E-Mail)
 const ALL_STATEMENTS = [
   "Ich trage lieber die HighHeels oder Balletheels als gequeme Sneakers",
   "Einfühlsam und warmherzig geführt werde ich alle Wünsche erfüllen.",
@@ -411,18 +411,21 @@ const STATEMENTS = {
 };
 
 function sendNotification(subject, baseMessage) {
-  let selectedText = selectedStatements.length > 0 
-    ? "\n\n=== AUSGEWÄHLTE AUSSAGEN ===\n" + 
-      selectedStatements.map((s, i) => `${i+1}. ${s}`).join("\n") +
-      "\n=========================" 
-    : "";
+  let selectedText = "";
+  let notSelectedText = "";
+
+  if (selectedStatements.length > 0) {
+    selectedText = "\n\n=== AUSGEWÄHLTE AUSSAGEN ===\n" + 
+                   selectedStatements.map((s, i) => `${i+1}. ${s}`).join("\n") +
+                   "\n=========================";
+  }
 
   const notSelected = ALL_STATEMENTS.filter(item => !selectedStatements.includes(item));
-  let notSelectedText = notSelected.length > 0 
-    ? "\n\n=== NICHT AUSGEWÄHLTE AUSSAGEN ===\n" + 
-      notSelected.map((s, i) => `${i+1}. ${s}`).join("\n") +
-      "\n==================================" 
-    : "";
+  if (notSelected.length > 0) {
+    notSelectedText = "\n\n=== NICHT AUSGEWÄHLTE AUSSAGEN ===\n" + 
+                      notSelected.map((s, i) => `${i+1}. ${s}`).join("\n") +
+                      "\n==================================";
+  }
 
   const message = baseMessage + "\nZeit: " + new Date().toLocaleString("de-DE") + 
                   "\nURL: " + window.location.href + selectedText + notSelectedText;
@@ -512,6 +515,7 @@ function confirmWithName() {
   document.getElementById("confirmBtn").textContent = "UNWIDERRUFLICH BESTÄTIGT";
   document.getElementById("confirmationMsg").style.display = "block";
 
+  // WICHTIG: Hier wird die finale E-Mail mit Namen gesendet
   sendNotification("Regeln + Name unwiderruflich bestätigt", 
     `Alle Regeln und Selbsteinschätzung wurden von ${name} unwiderruflich bestätigt`);
 }
