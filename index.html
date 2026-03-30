@@ -39,22 +39,79 @@
       position: relative;
       z-index: 1;
     }
-    h1 { color: #FFD700; text-align: center; margin: 0 0 1.8em; letter-spacing: 3px; text-transform: uppercase; font-weight: 900; text-shadow: 0 0 12px rgba(255,215,0,0.5); }
-    .disclaimer { background: rgba(30,30,38,0.8); padding: 40px 20px; border-radius: 10px; margin: 20px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 280px; }
-    .title-lines { color: #FFD700; font-size: 1.75rem; font-weight: 800; line-height: 1.65; letter-spacing: 1.2px; text-align: center; margin: 0 auto 2.5em; width: 100%; max-width: 420px; }
-    .rules { padding: 20px; text-align: center; font-size: 1.05rem; line-height: 1.55; }
-    .section-title { font-size: 1.45rem; font-weight: 800; color: #ffffff; margin: 2.8em 0 1.2em; letter-spacing: 1px; }
-    .note { font-size: 1.0rem; color: #ffd700; font-weight: 600; margin: 0.6em 0 1.8em; max-width: 520px; margin-left:auto; margin-right:auto; }
-    .important { color: #ff4444; font-weight: 700; font-size: 1.15rem; margin: 1.8em 0 1.2em; text-align:center; }
-
-    ul { list-style: none; padding: 0; margin: 1.2em auto; max-width: 520px; text-align: left; }
+    h1 { 
+      color: #FFD700; 
+      text-align: center; 
+      margin: 0 0 1.8em; 
+      letter-spacing: 3px; 
+      text-transform: uppercase; 
+      font-weight: 900; 
+      text-shadow: 0 0 12px rgba(255,215,0,0.5); 
+    }
+    .disclaimer { 
+      background: rgba(30,30,38,0.8); 
+      padding: 40px 20px; 
+      border-radius: 10px; 
+      margin: 20px 0; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+      min-height: 280px; 
+    }
+    .title-lines { 
+      color: #FFD700; 
+      font-size: 1.75rem; 
+      font-weight: 800; 
+      line-height: 1.65; 
+      letter-spacing: 1.2px; 
+      text-align: center; 
+      margin: 0 auto 2.5em; 
+      width: 100%; 
+      max-width: 420px; 
+    }
+    .rules { 
+      padding: 20px; 
+      text-align: center; 
+      font-size: 1.05rem; 
+      line-height: 1.55; 
+    }
+    .section-title { 
+      font-size: 1.45rem; 
+      font-weight: 800; 
+      color: #ffffff; 
+      margin: 2.8em 0 1.2em; 
+      letter-spacing: 1px; 
+    }
+    .note { 
+      font-size: 1.0rem; 
+      color: #ffd700; 
+      font-weight: 600; 
+      margin: 0.6em 0 1.8em; 
+      max-width: 520px; 
+      margin-left:auto; 
+      margin-right:auto; 
+    }
+    .important { 
+      color: #ff4444; 
+      font-weight: 700; 
+      font-size: 1.15rem; 
+      margin: 1.8em 0 1.2em; 
+      text-align:center; 
+    }
+    ul { 
+      list-style: none; 
+      padding: 0; 
+      margin: 1.2em auto; 
+      max-width: 520px; 
+      text-align: left; 
+    }
     ul li { 
       margin: 0.8em 0; 
       font-size: 1.05rem; 
       color: #e0e0e5; 
-      line-height: 1.55;
+      line-height: 1.55; 
     }
-
     .position-desc {
       font-family: monospace;
       background: rgba(13,13,18,0.9);
@@ -90,10 +147,30 @@
       letter-spacing: 1.5px;
       box-shadow: 0 6px 16px rgba(0,204,102,0.4);
     }
-    .btn:hover:not(:disabled) { background: #00e673; transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,204,102,0.55); }
-    .btn:disabled { background: #555; cursor: not-allowed; opacity: 0.6; box-shadow: none; }
-    .confirmation { color: #00ff88; font-size: 1.1rem; font-weight: 600; margin-top: 1em; display: none; }
-    .small { font-size: 0.88rem; color: #888; text-align: center; margin-top: 70px; }
+    .btn:hover:not(:disabled) { 
+      background: #00e673; 
+      transform: translateY(-3px); 
+      box-shadow: 0 14px 28px rgba(0,204,102,0.55); 
+    }
+    .btn:disabled { 
+      background: #555; 
+      cursor: not-allowed; 
+      opacity: 0.6; 
+      box-shadow: none; 
+    }
+    .confirmation { 
+      color: #00ff88; 
+      font-size: 1.1rem; 
+      font-weight: 600; 
+      margin-top: 1em; 
+      display: none; 
+    }
+    .small { 
+      font-size: 0.88rem; 
+      color: #888; 
+      text-align: center; 
+      margin-top: 70px; 
+    }
     .hidden { display: none; }
 
     .checkbox-label {
@@ -182,16 +259,13 @@
 <div class="container hidden" id="questionsPage">
   <div style="text-align: center; margin-bottom: 2.5em;">
     <h1 style="color: #FFD700; font-size: 2.1rem; letter-spacing: 3px; margin: 0 0 1.2em;">AUSWAHL</h1>
-    
     <p style="color: #ccc; font-size: 1.15rem; margin: 0.8em 0 0.4em;">
       Welche der folgenden Aussagen treffen auf dich zu?
     </p>
     <p style="color: #ffd700; font-size: 1.1rem; font-weight: 600; margin: 0.6em 0 2.8em;">
       Deine Aussagen können in die Regeln einfließen!
     </p>
-    <p style="color: #888; font-size: 0.95rem;">
-      (Mehrfachauswahl möglich)
-    </p>
+    <p style="color: #888; font-size: 0.95rem;">(Mehrfachauswahl möglich)</p>
   </div>
 
   <div class="rules" style="max-width: 540px; margin: 0 auto; text-align: left;">
@@ -229,7 +303,6 @@
     <h1 style="color: #FFD700; font-size: 2.3rem; letter-spacing: 4px; margin: 0;">VERBINDLICHE REGELN</h1>
   </div>
   <div class="rules">
-
     <div class="section-title">ANWEISUNG ZUM BETRETEN DES STUDIOS</div>
     <ul>
       <li>• KFZ AUF DER STRASSE PARKEN</li>
@@ -262,14 +335,10 @@
       <li id="wohl-li" style="display:none;">• NUR ZUM WOHLE DES HERRN ANWESEND</li>
       <li id="fesseln-li" style="display:none;">• PERMANENTE BEREITSCHAFT FÜR FESSELUNGEN</li>
       <li id="knebel-li" style="display:none;">• PERMANENTE BEREITSCHAFT FÜR JEDE ART KNEBELUNG</li>
-      <li id="ladung-li" style="display:none;">
-        • DIE LADUNG IST HEILIG!<br>
-          SPERMA IM GESICHT TRAGEN ODER VOLLSTÄNDIG SCHLUCKEN
-      </li>
+      <li id="ladung-li" style="display:none;">• DIE LADUNG IST HEILIG!<br>  SPERMA IM GESICHT TRAGEN ODER VOLLSTÄNDIG SCHLUCKEN</li>
       <li id="vollgespritzt-li" style="display:none;">• ALLE LÖCHER SIND IMMER ZUGÄNGLICH ZU HALTEN</li>
       <li id="brust-li" style="display:none;">• BEREITHALTEN DER BRÜSTE SIND FÜR NIPPELKLAMMERN UND ABBINDEN</li>
       <li id="plug-li" style="display:none;">• DER ANALPLUG KANN JEDERZEIT EINGESETZT WERDEN</li>
-
       <li id="heels-li" style="display:none;">• STRIKTE HIGHHEEL / BALLETHEEL- PFLICHT / + 14cm</li>
       <li id="outfit-li" style="display:none;">• KEINE FREIE OUTFITWAHL DER SKLAVIN</li>
       <li id="safeword-li" style="display:none;">• KEIN SAFEWORD</li>
@@ -283,10 +352,7 @@
     </ul>
 
     <div class="section-title">SKLAVIN-POSITION (STANDARD)</div>
-    <div class="note">
-      Sklavin-Position ist die Grundposition!<br>
-      D.h: Sklavin geht immer in diese Position, wenn keine weiteren Anweisungen bestehen
-    </div>
+    <div class="note">Sklavin-Position ist die Grundposition!<br>D.h: Sklavin geht immer in diese Position, wenn keine weiteren Anweisungen bestehen</div>
     <div class="position-desc">
       • AUF KNIEN<br>
       • KNIE WEIT AUSEINANDER<br>
@@ -307,32 +373,16 @@
     <img src="https://i.imgur.com/E4YIr2w.jpg" alt="Devote Sklavin-Position" class="position-image">
 
     <div class="section-title">ALTERNATIVE POSITION AUF ANWEISUNG</div>
-    <div class="position-desc">
-      Diese Position wird nur auf ausdrückliche Anweisung des Herrn eingenommen.
-    </div>
+    <div class="position-desc">Diese Position wird nur auf ausdrückliche Anweisung des Herrn eingenommen.</div>
     <img src="https://i.imgur.com/oQE3FRh.jpg" alt="Alternative Position auf Anweisung" class="position-image">
 
-    <p class="important">
-      NICHTEINHALTUNG = VORSÄTZLICHE PROVOKATION
-    </p>
+    <p class="important">NICHTEINHALTUNG = VORSÄTZLICHE PROVOKATION</p>
 
-    <p style="max-width: 520px; margin: 2.5em auto; font-size: 1.05rem;">
-      ALLE MASSNAMEN DIENEN REIN DER SICHERHEIT DER SKLAVIN666 UND DER SICHEREN, REIBUNGSLOSEN UND INTENSIVEN DURCHFÜHRUNG DIESES SHOOTINGS!
-    </p>
-
-    <div style="margin: 2.5em 0 1em; font-size: 1.35rem; font-weight: 800; color: #FFFFFF; text-align:center;">
-      SKLAVIN BESTÄTIGT ALLE REGELN UND ANWEISUNGEN STRIKT EINZUHALTEN.<br>
-      BEI MISACHTUNG WÜNSCHT DIE SKLAVIN STRENGE BESTRAFUNG!
-    </div>
-
-    <div id="noSafewordWarning">
-      ACHTUNG! KEIN SAFEWORD!
-    </div>
+    <div id="noSafewordWarning">ACHTUNG! KEIN SAFEWORD!</div>
 
     <button id="confirmBtn" class="btn" onclick="showNameModal()">BESTÄTIGEN</button>
     <div id="confirmationMsg" class="confirmation">Bestätigung wurde einmalig versendet.</div>
   </div>
-
   <div class="small">SLAVE666ADVICE</div>
 </div>
 
@@ -354,7 +404,6 @@ let hasConfirmed = false;
 let selectedStatements = [];
 let confirmedName = "";
 
-// Alle verfügbaren Aussagen (für die "Nicht ausgewählt"-Liste)
 const ALL_STATEMENTS = [
   "Ich trage lieber die HighHeels oder Balletheels als gequeme Sneakers",
   "Einfühlsam und warmherzig geführt werde ich alle Wünsche erfüllen.",
@@ -383,7 +432,7 @@ const ALL_STATEMENTS = [
 ];
 
 const STATEMENTS = {
-  KNIE:     "Ich trage lieber die HighHeels oder Balletheels als gequeme Sneakers",
+  HEELS:    "Ich trage lieber die HighHeels oder Balletheels als gequeme Sneakers",
   WARM:     "Einfühlsam und warmherzig geführt werde ich alle Wünsche erfüllen.",
   SEIL:     "Ich genieße es, wenn das Seil tief in mein Schritt gräbt",
   KNEBEL2:  "Ich genieße es, wenn der Knebel meinen Mund unbarmherzig zum Schweigen bringt",
@@ -400,7 +449,6 @@ const STATEMENTS = {
   RAPEPLAY: "Ich bin fixiert und der Herr kann mit RAPEPLAY alles mit mir machen",
   HOGTIE:   "Ich bin in einen hogtie gefesselt, geknebelt mit Ballgag, meine Brüste sind abgebunden und haben Nippelklammern. Vorne ist ein Plug.... der vibriert und ich genieße es!!!!",
   PLUG:     "Der Herr schiebt im richtigen Moment den Analplug rein...",
-  HEELS:    "Ich trage lieber die HighHeels oder Balletheels als gequeme Sneakers",
   OUTFIT:   "Nur der Herr weiß, welches Outfit mir am besten steht.",
   ERREGUNG: "Dieses hier versetzt mich in erregten Gemütszustand",
   GESTELL:  "In dem Gestell mit Ketten und Stahl restriktiv fixiert, fest geknebelt, ersehne ich den Moment der Öffnung der Reißverschlüße",
@@ -411,40 +459,38 @@ const STATEMENTS = {
 };
 
 function sendNotification(subject, baseMessage) {
-  let selectedText = "";
-  let notSelectedText = "";
+  const selected = selectedStatements;
+  const notSelected = ALL_STATEMENTS.filter(item => !selected.includes(item));
 
-  if (selectedStatements.length > 0) {
-    selectedText = "\n\n=== AUSGEWÄHLTE AUSSAGEN ===\n" + 
-                   selectedStatements.map((s, i) => `${i+1}. ${s}`).join("\n") +
-                   "\n=========================";
-  }
+  let selectedText = selected.length ? 
+    "\n\n=== AUSGEWÄHLTE AUSSAGEN ===\n" + 
+    selected.map((s, i) => `${i+1}. ${s}`).join("\n") + 
+    "\n=========================" : "";
 
-  // Nicht ausgewählte Punkte berechnen
-  const notSelected = ALL_STATEMENTS.filter(item => !selectedStatements.includes(item));
-  if (notSelected.length > 0) {
-    notSelectedText = "\n\n=== NICHT AUSGEWÄHLTE AUSSAGEN ===\n" + 
-                      notSelected.map((s, i) => `${i+1}. ${s}`).join("\n") +
-                      "\n==================================";
-  }
+  let notSelectedText = notSelected.length ? 
+    "\n\n=== NICHT AUSGEWÄHLTE AUSSAGEN ===\n" + 
+    notSelected.map((s, i) => `${i+1}. ${s}`).join("\n") + 
+    "\n==================================" : "";
 
-  const message = baseMessage + "\nZeit: " + new Date().toLocaleString("de-DE") + 
-                  "\nURL: " + window.location.href + selectedText + notSelectedText;
+  let fullMessage = baseMessage + 
+                    "\nZeit: " + new Date().toLocaleString("de-DE") + 
+                    "\nURL: " + window.location.href +
+                    selectedText + notSelectedText;
 
   if (confirmedName) {
-    message += `\n\nUNWIDERRUFLICH BESTÄTIGT DURCH: ${confirmedName}`;
+    fullMessage += `\n\nUNWIDERRUFLICH BESTÄTIGT DURCH: ${confirmedName}`;
   }
 
   fetch("https://api.web3forms.com/submit", {
     method: "POST",
     headers: { "Content-Type": "application/json", "Accept": "application/json" },
     body: JSON.stringify({
-      access_key: "a299efc0-ebd5-46f2-a7be-2b1362111558",
+      access_key: "c4cae7a5-ae0f-4b4a-80ec-4f4c29f37185",
       from_name: "sklavin666 Seite",
       subject: subject,
-      message: message
+      message: fullMessage
     })
-  }).catch(err => console.log("Web3Forms Fehler:", err));
+  }).catch(err => console.error("Web3Forms Fehler:", err));
 }
 
 function acceptDisclaimer() {
@@ -458,26 +504,27 @@ function goToRules() {
   selectedStatements = Array.from(document.querySelectorAll('input[name="statement"]:checked'))
                            .map(cb => cb.value);
 
+  // Dynamische Regeln zurücksetzen
   const dynamicIds = ['moebel-li','fuehrung-li','wuensche-li','wohl-li','fesseln-li','knebel-li','ladung-li','vollgespritzt-li','brust-li','plug-li','heels-li','outfit-li','safeword-li','feucht-li','gerte-li','warm-li','zwiespalt-li','unschluessig-li'];
   dynamicIds.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.style.display = 'none';
   });
 
-  if (selectedStatements.includes(STATEMENTS.KNIE)) document.getElementById("moebel-li").style.display = "list-item";
-  if (selectedStatements.includes(STATEMENTS.WARM)) document.getElementById("warm-li").style.display = "list-item";
+  if (selectedStatements.includes(STATEMENTS.HEELS)) document.getElementById("moebel-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.HARTE)) document.getElementById("fuehrung-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.WUENSCHE)) document.getElementById("wuensche-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.WOHL)) document.getElementById("wohl-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.FESSELN)) document.getElementById("fesseln-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.KNEBEL)) document.getElementById("knebel-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.RINGGAG) || selectedStatements.includes(STATEMENTS.GESICHT)) document.getElementById("ladung-li").style.display = "list-item";
-  if (selectedStatements.includes(STATEMENTS.VOLLGESPRITZT)) document.getElementById("vollgespritzt-li").style.display = "list-item";
+  if (selectedStatements.includes(STATEMENTS.RAPEPLAY)) document.getElementById("vollgespritzt-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.HOGTIE)) document.getElementById("brust-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.PLUG)) document.getElementById("plug-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.HEELS)) document.getElementById("heels-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.OUTFIT)) document.getElementById("outfit-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.GERTE)) document.getElementById("gerte-li").style.display = "list-item";
+  if (selectedStatements.includes(STATEMENTS.WARM)) document.getElementById("warm-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.ZWIESPALT)) document.getElementById("zwiespalt-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.UNSCHL)) document.getElementById("unschluessig-li").style.display = "list-item";
   if (selectedStatements.includes(STATEMENTS.SAFEWORD)) {
@@ -491,7 +538,6 @@ function goToRules() {
   document.getElementById("questionsPage").classList.add("hidden");
   document.getElementById("rulesPage").classList.remove("hidden");
   window.scrollTo(0,0);
-
   sendNotification("Selbsteinschätzung → Regeln", "Selbsteinschätzung wurde ausgefüllt");
 }
 
